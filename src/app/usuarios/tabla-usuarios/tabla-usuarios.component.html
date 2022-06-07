@@ -1,0 +1,36 @@
+
+<h2 nz-typography style="text-align: center;">Datos</h2>
+
+
+<div style="padding:30px;">
+  <div class="card">
+    <div class="card-body">
+      <button nzType="primary">Agregar</button>
+
+      <nz-table #basicTable [nzData]="users" nzTableLayout="fixed">
+        <thead>
+          <tr>
+            <th>Nombre de usuario</th>
+            <th>Fecha de nacimiento</th>
+            <th>Edad</th>
+            <th>Dirección</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td><span nz-typography><kbd>{{ data.name }}</kbd></span></td>
+            
+            <td><span nz-typography><mark>{{ data.fecha_nacimiento }} </mark></span></td>
+            <td>{{ data.edad }}</td>
+            <td>Calle: {{ data.domicilio }} #{{ data.numero_exterior }} Colonia: {{ data.colonia }} CP: {{ data.cp }}  de {{ data.ciudad }}  </td>
+          </tr>
+        </tbody>
+      </nz-table>
+
+
+    </div>
+  </div>
+
+</div>
+
+
